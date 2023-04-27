@@ -3,7 +3,6 @@
 
 - Install Python pre-requisites with ```pip3 install -r requirements.txt```.
 - Generate your Confluence API Key from https://id.atlassian.com/manage-profile/security/api-tokens.
-- Update your Confluence URL in the scripts.
 
 ## Read Confluence Page
 
@@ -40,9 +39,8 @@ $ ./confluence-read.py -u kansvignesh@gmail.com -p `cat apikey.secret` -s https:
 ## Update Confluence Page
 
 ```
-./confluence-update.py -h
-
-usage: confluence-update.py [-h] -u USER [-t TITLE] -f FILE pageid
+$ ./confluence-update.py -h
+vusage: confluence-update.py [-h] -u USER -p PASSWORD -s SITE [-t TITLE] -f FILE pageid
 
 positional arguments:
   pageid                Specify the Conflunce page id to overwrite
@@ -50,6 +48,9 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   -u USER, --user USER  Specify the username to log into Confluence
+  -p PASSWORD, --password PASSWORD
+                        Specify the api-key to access Confluence
+  -s SITE, --site SITE  Specify the Conflunce site URL
   -t TITLE, --title TITLE
                         Specify a new title
   -f FILE, --file FILE  Write the contents of FILE to the confluence page
@@ -57,7 +58,7 @@ optional arguments:
 
 Example:
 ```
-./confluence-update.py -u yourconfluenceuser@yourdomain.com -t 'Your Page Title' -f yourinputfile pageid
+./confluence-update.py -u yourconfluenceuser@yourdomain.com -t 'Your Page Title' -f yourinputfile -s https://yourdomain.atlassian.net pageid
 ```
 
 ### Sample Run
@@ -77,3 +78,5 @@ URL: https://kansvignesh.atlassian.net/wiki/pages/viewpage.action?pageId=98398
 ```
 python3 -m keyring get confluence_script vignesh.narasimhulu@teletracnavman.com
 ```
+
+Thanks.
