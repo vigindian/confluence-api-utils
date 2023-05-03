@@ -25,7 +25,6 @@ headers = {
 ############
 def get_login(username = None, passwd = None):
 
-    #username="tn360-platform-eng@teletracnavman.com"
     if username is None:
         username = getpass.getuser()
 

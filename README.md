@@ -76,7 +76,7 @@ URL: https://kansvignesh.atlassian.net/wiki/pages/viewpage.action?pageId=98398
 ## Other Notes
 - You can store your secrets in keyring and use it in your code. Stored keyring secrets can be validated with the below command:
 ```
-python3 -m keyring get confluence_script vignesh.narasimhulu@teletracnavman.com
+python3 -m keyring get confluence_script username@example.com
 ```
 
 Thanks.
